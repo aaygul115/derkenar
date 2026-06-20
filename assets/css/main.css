@@ -81,12 +81,20 @@ body { background: var(--bg); color: var(--text); font-family: var(--serif); fon
 .footer-copy { font-family: var(--sans); font-size: 12px; color: var(--subtle); }
 
 @media (max-width: 640px) {
+  /* Mevcut Mobil Düzen Ayarları */
   .site-nav { display: none; }
   .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 1rem; }
   .nav-toggle { display: flex; }
   .site-header { position: relative; }
-  .hero-title, .makale-baslik { font-size: 22px; }
   .kunye-tablo { grid-template-columns: 1fr; }
   .post-item { grid-template-columns: 1fr; }
   .post-date { display: none; }
+  
+  /* Yeni Eklenen: Mobil Yazı Boyutu Büyütme */
+  body { font-size: 18px; line-height: 1.8; }
+  .makale-icerik p { font-size: 18px; line-height: 1.8; }
+  .hero-title, .makale-baslik { font-size: 24px; line-height: 1.4; }
+  .hero-excerpt { font-size: 16px; }
+  .yazar-notu-metin { font-size: 15px; }
+  .post-title a { font-size: 18px; }
 }
