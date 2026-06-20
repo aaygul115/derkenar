@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article>
+  <div class="makale-header">
+    <div class="makale-label">{{ page.kategori | default: "Analiz" }} · {{ page.date | date: "%-d %B %Y" }}</div>
+    <h1 class="makale-baslik">{{ page.title }}</h1>
+    <div class="makale-meta"><span>{{ page.okuma_suresi | default: "5" }} dakika okuma</span></div>
+  </div>
+  <div class="makale-icerik">{{ content }}</div>
+  {% if page.etiketler %}
+  <div class="etiketler">
+    {% for etiket in page.etiketler %}<span class="etiket">{{ etiket }}</span>{% endfor %}
+  </div>
+  {% endif %}
+  {% assign sonraki = site.posts | sort: 'date' %}
+  {% for post in sonraki %}
+    {% if post.url == page.url %}{% assign idx = forloop.index0 | minus: 1 %}{% endif %}
+  {% endfor %}
+  {% if idx >= 0 %}
+  {% assign onceki_yazi = sonraki[idx] %}
+  <div class="sonraki-yazi">
+    <div class="sonraki-label">Sıradaki Yazı</div>
+    <div class="sonraki-baslik"><a href="{{ onceki_yazi.url | relative_url }}">{{ onceki_yazi.title }} →</a></div>
+  </div>
+  {% endif %}
+</article>

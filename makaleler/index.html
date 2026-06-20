@@ -1,0 +1,19 @@
+---
+layout: default
+title: Makaleler
+---
+<div style="padding: 2rem 0 1rem;">
+  <h1 style="font-family: var(--serif); font-size: 24px; font-weight: 500; color: var(--text); margin-bottom: 0.25rem;">Makaleler</h1>
+  <p style="font-family: var(--sans); font-size: 13px; color: var(--subtle);">Analiz ve araştırma yazıları</p>
+</div>
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-item">
+    <div>
+      <div class="post-tag">{{ post.kategori | default: "Analiz" }}</div>
+      <div class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+    </div>
+    <div class="post-date">{{ post.date | date: "%-d %b %Y" }}</div>
+  </li>
+  {% endfor %}
+</ul>

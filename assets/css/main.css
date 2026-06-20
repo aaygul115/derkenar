@@ -1,0 +1,92 @@
+/* Derkenar — Fildişi Tema */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #F8F4EE;
+  --bg2:     #F0E9DF;
+  --border:  #DDD5CA;
+  --text:    #2C2520;
+  --muted:   #5C4E43;
+  --subtle:  #8C7B6E;
+  --serif:   Georgia, 'Times New Roman', serif;
+  --sans:    system-ui, -apple-system, sans-serif;
+}
+
+body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 16px; line-height: 1.7; }
+
+.site-header { border-bottom: 1px solid var(--border); background: var(--bg); padding: 0.9rem 0; position: sticky; top: 0; z-index: 10; }
+.site-header .inner { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+.site-logo { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--text); text-decoration: none; }
+.site-logo span { display: block; font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); font-weight: 400; margin-top: 1px; }
+.site-nav { display: flex; gap: 1.5rem; }
+.site-nav a { font-family: var(--sans); font-size: 13px; color: var(--subtle); text-decoration: none; }
+.site-nav a:hover { color: var(--text); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--subtle); border-radius: 1px; }
+
+.site-content { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+.hero { padding: 2.5rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.hero-label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.6rem; }
+.hero-title { font-size: 26px; font-weight: 500; line-height: 1.3; color: var(--text); margin-bottom: 0.75rem; }
+.hero-meta { font-family: var(--sans); font-size: 12px; color: var(--subtle); display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.hero-excerpt { font-family: var(--sans); font-size: 15px; line-height: 1.65; color: var(--muted); }
+.hero-link { display: inline-block; margin-top: 1rem; font-family: var(--sans); font-size: 13px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.hero-link:hover { border-color: var(--text); }
+
+.section-label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-bottom: 1rem; }
+
+.post-list { list-style: none; margin-bottom: 2.5rem; }
+.post-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; padding: 1rem 0; border-bottom: 0.5px solid var(--border); }
+.post-item:first-child { border-top: 0.5px solid var(--border); }
+.post-tag { font-family: var(--sans); font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.3rem; }
+.post-title a { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--text); text-decoration: none; line-height: 1.4; }
+.post-title a:hover { color: var(--muted); }
+.post-date { font-family: var(--sans); font-size: 12px; color: var(--subtle); white-space: nowrap; padding-top: 0.2rem; }
+
+.makale-header { padding: 2.5rem 0 1.5rem; border-bottom: 0.5px solid var(--border); margin-bottom: 2rem; }
+.makale-label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.5rem; }
+.makale-baslik { font-size: 28px; font-weight: 500; line-height: 1.3; color: var(--text); margin-bottom: 0.75rem; }
+.makale-meta { font-family: var(--sans); font-size: 12px; color: var(--subtle); display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.makale-icerik { max-width: 640px; }
+.makale-icerik p { font-size: 16px; line-height: 1.9; color: var(--text); margin-bottom: 1.2rem; }
+.makale-icerik p:first-of-type::first-letter { font-size: 3.2em; font-weight: 500; float: left; line-height: 0.82; margin: 0.06em 0.08em 0 0; color: var(--text); }
+.makale-icerik h2 { font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--subtle); font-weight: 500; margin: 2rem 0 0.8rem; }
+.makale-icerik h3 { font-size: 18px; font-weight: 500; color: var(--text); margin: 1.5rem 0 0.6rem; }
+.makale-icerik blockquote { margin: 1.5rem 0; padding: 0.85rem 1.1rem; border-left: 2px solid var(--border); background: var(--bg2); border-radius: 0 4px 4px 0; }
+.makale-icerik blockquote p { font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 0; }
+.makale-icerik ul, .makale-icerik ol { margin: 0 0 1.2rem 1.4rem; color: var(--text); }
+.makale-icerik li { margin-bottom: 0.4rem; line-height: 1.75; }
+
+.kunye { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+.kunye-baslik { font-size: 20px; font-weight: 500; line-height: 1.35; color: var(--text); margin-bottom: 1rem; }
+.kunye-tablo { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.kunye-anahtar { font-family: var(--sans); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.15rem; }
+.kunye-deger { font-family: var(--sans); font-size: 13px; color: var(--text); }
+
+.yazar-notu { display: flex; gap: 10px; align-items: flex-start; background: var(--bg2); border-radius: 4px; padding: 0.9rem 1rem; margin: 1.5rem 0; border-left: 2px solid var(--border); }
+.yazar-notu-metin { font-family: var(--sans); font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.etiketler { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+.etiket { font-family: var(--sans); font-size: 11px; color: var(--subtle); border: 0.5px solid var(--border); border-radius: 3px; padding: 3px 9px; background: var(--bg); }
+
+.sonraki-yazi { border-top: 0.5px solid var(--border); padding: 1.5rem 0; margin-top: 2.5rem; }
+.sonraki-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.4rem; }
+.sonraki-baslik a { font-family: var(--serif); font-size: 16px; color: var(--text); text-decoration: none; }
+
+.site-footer { border-top: 1px solid var(--border); background: var(--bg2); margin-top: 3rem; padding: 1.25rem 0; }
+.site-footer .inner { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: var(--serif); font-size: 15px; color: var(--subtle); text-decoration: none; }
+.footer-copy { font-family: var(--sans); font-size: 12px; color: var(--subtle); }
+
+@media (max-width: 640px) {
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; gap: 1rem; }
+  .nav-toggle { display: flex; }
+  .site-header { position: relative; }
+  .hero-title, .makale-baslik { font-size: 22px; }
+  .kunye-tablo { grid-template-columns: 1fr; }
+  .post-item { grid-template-columns: 1fr; }
+  .post-date { display: none; }
+}

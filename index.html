@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{% assign one = site.posts.first %}
+{% if one %}
+<div class="hero">
+  <div class="hero-label">Öne Çıkan</div>
+  <h2 class="hero-title">{{ one.title }}</h2>
+  <div class="hero-meta">
+    <span>{{ one.kategori | default: "Analiz" }}</span>
+    <span>·</span>
+    <span>{{ one.date | date: "%-d %B %Y" }}</span>
+    {% if one.okuma_suresi %}<span>·</span><span>{{ one.okuma_suresi }} dk okuma</span>{% endif %}
+  </div>
+  <div class="hero-excerpt">{{ one.excerpt | strip_html | truncate: 220 }}</div>
+  <a href="{{ one.url | relative_url }}" class="hero-link">Devamını oku</a>
+</div>
+{% endif %}
+
+<div class="section-label">Son Yazılar</div>
+<ul class="post-list">
+  {% for post in site.posts limit:6 %}
+  <li class="post-item">
+    <div>
+      <div class="post-tag">{{ post.kategori | default: "Analiz" }}</div>
+      <div class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+    </div>
+    <div class="post-date">{{ post.date | date: "%-d %b %Y" }}</div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if site.kararlar.size > 0 %}
+<div class="section-label">Karar İncelemeleri</div>
+<ul class="post-list">
+  {% for karar in site.kararlar limit:4 %}
+  <li class="post-item">
+    <div>
+      <div class="post-tag">{{ karar.mahkeme }}</div>
+      <div class="post-title"><a href="{{ karar.url | relative_url }}">{{ karar.title }}</a></div>
+    </div>
+    <div class="post-date">{{ karar.date | date: "%-d %b %Y" }}</div>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

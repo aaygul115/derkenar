@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article>
+  <div class="makale-header">
+    <div class="makale-label">Karar İncelemesi · {{ page.date | date: "%-d %B %Y" }}</div>
+    <h1 class="makale-baslik">{{ page.title }}</h1>
+  </div>
+  <div class="kunye">
+    <div class="kunye-tablo">
+      <div><div class="kunye-anahtar">Mahkeme</div><div class="kunye-deger">{{ page.mahkeme }}</div></div>
+      <div><div class="kunye-anahtar">Tarih</div><div class="kunye-deger">{{ page.karar_tarihi }}</div></div>
+      <div><div class="kunye-anahtar">Esas No</div><div class="kunye-deger">{{ page.esas_no }}</div></div>
+      <div><div class="kunye-anahtar">Karar No</div><div class="kunye-deger">{{ page.karar_no }}</div></div>
+      <div><div class="kunye-anahtar">Konu</div><div class="kunye-deger">{{ page.konu }}</div></div>
+      <div><div class="kunye-anahtar">Sonuç</div><div class="kunye-deger">{{ page.sonuc }}</div></div>
+    </div>
+  </div>
+  <div class="makale-icerik">{{ content }}</div>
+  {% if page.etiketler %}
+  <div class="etiketler">
+    {% for etiket in page.etiketler %}<span class="etiket">{{ etiket }}</span>{% endfor %}
+  </div>
+  {% endif %}
+</article>

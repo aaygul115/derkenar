@@ -1,0 +1,26 @@
+title: Derkenar
+description: İdare Hukuku Analiz ve Karar İncelemeleri
+baseurl: "/derkenar"
+url: "https://aaygul115.github.io"
+lang: tr
+permalink: /:categories/:year/:month/:day/:title/
+
+collections:
+  kararlar:
+    output: true
+    permalink: /kararlar/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "makale"
+  - scope:
+      path: ""
+      type: "kararlar"
+    values:
+      layout: "karar"
+
+markdown: kramdown
+highlighter: rouge

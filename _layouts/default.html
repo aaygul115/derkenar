@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo">Derkenar<span>İdare Hukuku</span></a>
+    <nav class="site-nav" id="site-nav">
+      <a href="{{ '/makaleler/' | relative_url }}">Makaleler</a>
+      <a href="{{ '/kararlar/' | relative_url }}">Karar İncelemeleri</a>
+      <a href="{{ '/hakkinda/' | relative_url }}">Hakkında</a>
+    </nav>
+    <button class="nav-toggle" onclick="document.getElementById('site-nav').classList.toggle('open')" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<main class="site-content">{{ content }}</main>
+<footer class="site-footer">
+  <div class="inner">
+    <a href="{{ '/' | relative_url }}" class="footer-logo">Derkenar</a>
+    <span class="footer-copy">© {{ 'now' | date: "%Y" }}</span>
+  </div>
+</footer>
+</body>
+</html>
